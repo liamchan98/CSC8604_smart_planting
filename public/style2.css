@@ -1,0 +1,20 @@
+/*Simple CSS styling to center image and text. Background is matched with jpg backgrounds for aesthetic reasons*/
+
+body {
+    font-family: sans-serif;
+    background-color: rgb(117, 185, 224);
+}
+h1,p{
+    text-align: center;
+    color: rgb(242, 247, 242)
+}
+button{
+    text-align: right; 
+}
+img {
+display: block;    
+position: absolute;
+top: 50%;
+left: 50%;
+transform: translate(-50%,-50%) 
+}

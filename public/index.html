@@ -1,0 +1,59 @@
+
+<!--Code is heavily influenced by Dan Jackson practicals from CSC8604 Module-->
+
+<!-- Simple html / css styling to make website navigatable and usable for users.-->
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Website</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    
+    <h1>Basil</h1>
+    <p>
+        <span id="plantCond1"></span>
+        
+        <!-- A button to update the image to match the state the plant is in. It is possible to use
+        setInterval/setTimeout to update image dyanamically however, this was not done in fear
+      that it would overload Raspberry Pi -->
+      
+        <button onclick="updatePlant1()">How is Basil Feeling?</button>
+      
+      </p>
+        <img src='p1_08.jpg' id='plant1' alt='Error Fetching Status'/>
+    
+
+        
+        <p>Status Of  <a href="plant2.html">Next Linked Plant</a>.</p>
+        <p>Plants  <a href="overview.html">Overview</a>.</p>
+        
+
+
+    <!--Using fetch methods I can read the plantState# variable and determine which state the 
+    plant is in on this HTML page. imageSelect reads what the plantState is in and 
+    changes the source of the image within the body to match the state the plant is currently in -->
+
+    <script>
+
+
+        async function updatePlant1() {
+          const response = await fetch('/plantCond1')
+          if (!response.ok) throw new Error('Failure during fetch')
+          const result = await response.json()
+          var imageSelect = result.plantCond1 
+          var img1 = document.getElementById('plant1') 
+          
+          if (imageSelect == 1) img1.src='p1_01.jpg';
+          if (imageSelect == 2) img1.src='p1_02.jpg';
+          if (imageSelect == 3) img1.src='p1_03.jpg';
+          if (imageSelect == 4) img1.src='p1_04.jpg';
+          if (imageSelect == 5) img1.src='p1_05.jpg';
+          if (imageSelect == 6) img1.src='p1_06.jpg';
+          if (imageSelect == 7) img1.src='p1_07.jpg';
+          if (imageSelect == 8) img1.src='p1_08.jpg';
+        }
+        </script>
+</body>
+</html>

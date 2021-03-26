@@ -1,0 +1,18 @@
+body {
+    font-family: sans-serif;
+    background-color: rgb(75, 75, 75);
+}
+h1,p{
+    text-align: center;
+    color: rgb(242, 247, 242)
+}
+button{
+    text-align: right; 
+}
+img {
+display: block;    
+position: relative;
+top: 50%;
+left: 50%;
+transform: translate(-50%,0%) 
+}
