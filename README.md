@@ -16,3 +16,7 @@ After data capture the data is processed by comparing the data against (arbitrar
 
 #### Output
 The state of the sensor is processed and then is fetched in html which are styled using standard .html formatting and .css styling. files using .fetch methods in express. Using the processing output we can tell the html to change the source of an image on a webpage to match the state that the plant/sensor is currently in. 
+
+#### Future
+
+Potential future development could be to add to this. Code is currently unoptomised and doesn't feature many of the features I hope to have in a final iteration. Also, with more sensors and variables we can increase the amount of states to increase the complexity of the output. 
